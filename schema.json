@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+  "type": "object",
+  "properties": {
+    "readme": {
+      "type": "string",
+      "title": "MagicTime: Time-lapse Video Generation Models as Metamorphic Simulators",
+      "author": "Shenghai Yuan, Jinfa Huang, Yujun Shi, Yongqi Xu, Ruijie Zhu, Bin Lin, Xinhua Cheng, Li Yuan, Jiebo Luo",
+      "code": "https://github.com/PKU-YuanGroup/MagicTime",
+      "paper": "https://arxiv.org/abs/2404.05014",
+      "page": "https://pku-yuangroup.github.io/MagicTime/",
+      "jupyter": "https://github.com/camenduru/MagicTime-jupyter",
+      "widget": "readme"
+    },
+    "prompt": {
+      "type": "string",
+      "description": "Prompt",
+      "widget": "textarea"
+    },
+    "negative_prompt": {
+      "type": "string",
+      "description": "Negative Prompt",
+      "widget": "textarea"
+    },
+    "num_inference_steps": {
+      "type": "integer",
+      "readOnly": "false",
+      "description": "Inference Steps"
+    },
+    "guidance_scale": {
+      "type": "number",
+      "readOnly": "false",
+      "description": "Guidance Scale"
+    },
+    "video_length": {
+      "type": "integer",
+      "readOnly": "false",
+      "description": "Video Length"
+    },
+    "width": {
+      "type": "integer",
+      "readOnly": "false",
+      "description": "Width"
+    },
+    "height": {
+      "type": "integer",
+      "readOnly": "false",
+      "description": "Height"
+    }
+  },
+  "buttons": [
+    {
+      "id": "enter",
+      "label": "🥪 Enter"
+    }
+  ]
+}
