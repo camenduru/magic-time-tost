@@ -9,7 +9,7 @@ RUN adduser --disabled-password --gecos '' camenduru && \
     chown -R camenduru:camenduru /home && \
     chmod -R 777 /home
 
-RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs unzip && \
+RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs unzip ffmpeg && \
     pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av xformers==0.0.25 einops omegaconf accelerate==0.28.0 \
     diffusers==0.11.1 transformers==4.38.2 jax==0.4.19 jaxlib==0.4.19 ms-swift runpod
 
