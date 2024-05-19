@@ -9,8 +9,11 @@ RUN adduser --disabled-password --gecos '' camenduru && \
     chown -R camenduru:camenduru /home && \
     chmod -R 777 /home
 
-RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs unzip ffmpeg && \
-    pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av xformers==0.0.25 einops omegaconf accelerate==0.28.0 \
+RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs unzip ffmpeg
+
+USER camenduru
+
+RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av xformers==0.0.25 einops omegaconf accelerate==0.28.0 \
     diffusers==0.11.1 transformers==4.38.2 jax==0.4.19 jaxlib==0.4.19 ms-swift runpod
 
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone -b dev https://github.com/camenduru/MagicTime /content/MagicTime
@@ -29,6 +32,5 @@ RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co
     aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/spaces/BestWishYsh/MagicTime/raw/main/ckpts/Magic_Weights/magic_text_encoder/default/adapter_config.json -d /content/MagicTime/ckpts/Magic_Weights/magic_text_encoder/default -o adapter_config.json
 
 COPY ./worker_runpod.py /content/MagicTime/worker_runpod.py
-USER camenduru
 WORKDIR /content/MagicTime
 CMD python worker_runpod.py

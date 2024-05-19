@@ -5,7 +5,7 @@ from utils.unet import UNet3DConditionModel
 from utils.pipeline_magictime import MagicTimePipeline
 from utils.util import save_videos_grid
 from utils.util import load_weights
-import torch, json
+import torch, json, os
 from PIL import Image
 
 import runpod
