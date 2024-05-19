@@ -11,7 +11,7 @@ RUN adduser --disabled-password --gecos '' camenduru && \
 
 RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs unzip && \
     pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av xformers==0.0.25 einops omegaconf accelerate==0.28.0 \
-    diffusers==0.11.1 transformers==4.38.2 jax==0.4.19 jaxlib==0.4.19 ms-swift
+    diffusers==0.11.1 transformers==4.38.2 jax==0.4.19 jaxlib==0.4.19 ms-swift runpod
 
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone -b dev https://github.com/camenduru/MagicTime /content/MagicTime
 RUN GIT_CLONE_PROTECTION_ACTIVE=false git clone -b fp16 https://huggingface.co/runwayml/stable-diffusion-v1-5 /content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5
