@@ -10,6 +10,8 @@ from PIL import Image
 
 import runpod
 
+discord_token = os.getenv('com_camenduru_discord_token')
+
 tokenizer    = CLIPTokenizer.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="tokenizer")
 text_encoder = CLIPTextModel.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="text_encoder").cuda()
 vae          = AutoencoderKL.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="vae").cuda()
@@ -121,7 +123,7 @@ def generate(input):
         del values['source_id']
         source_channel = values['source_channel']     
         del values['source_channel']
-        files = {f"image.png": open(result, "rb").read()}
+        files = {f"video.mp4": open(result, "rb").read()}
         payload = {"content": f"{json.dumps(values)} <@{source_id}>"}
         response = requests.post(
             f"https://discord.com/api/v9/channels/{source_channel}/messages",
