@@ -59,8 +59,6 @@ pipeline = load_weights(
     magic_text_encoder_path="/content/MagicTime/ckpts/Magic_Weights/magic_text_encoder",
 ).to("cuda")
 
-import gradio as gr
-
 def closestNumber(n, m):
     q = int(n / m)
     n1 = m * q
