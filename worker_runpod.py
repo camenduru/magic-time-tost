@@ -8,6 +8,8 @@ from utils.util import load_weights
 import torch, json
 from PIL import Image
 
+import runpod
+
 tokenizer    = CLIPTokenizer.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="tokenizer")
 text_encoder = CLIPTextModel.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="text_encoder").cuda()
 vae          = AutoencoderKL.from_pretrained("/content/MagicTime/ckpts/Base_Model/stable-diffusion-v1-5", subfolder="vae").cuda()
