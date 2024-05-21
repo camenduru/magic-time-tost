@@ -10,6 +10,10 @@
       "paper": "https://arxiv.org/abs/2404.05014",
       "page": "https://pku-yuangroup.github.io/MagicTime/",
       "jupyter": "https://github.com/camenduru/MagicTime-jupyter",
+      "post": "https://x.com/camenduru/status/1779120764400112122",
+      "tags": [
+        "Text to Video"
+      ],
       "widget": "readme"
     },
     "prompt": {
@@ -24,27 +28,27 @@
     },
     "num_inference_steps": {
       "type": "integer",
-      "readOnly": "false",
+      "readOnly": "true",
       "description": "Inference Steps"
     },
     "guidance_scale": {
       "type": "number",
-      "readOnly": "false",
+      "readOnly": "true",
       "description": "Guidance Scale"
     },
     "video_length": {
       "type": "integer",
-      "readOnly": "false",
+      "readOnly": "true",
       "description": "Video Length"
     },
     "width": {
       "type": "integer",
-      "readOnly": "false",
+      "readOnly": "true",
       "description": "Width"
     },
     "height": {
       "type": "integer",
-      "readOnly": "false",
+      "readOnly": "true",
       "description": "Height"
     }
   },
