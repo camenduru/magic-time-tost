@@ -72,6 +72,7 @@ def closestNumber(n, m):
         return n1
     return n2
 
+@torch.inference_mode()
 def generate(command):
     values = json.loads(command)
     random_seed = torch.randint(0, 2 ** 32 - 1, (1,)).item()
@@ -109,7 +110,7 @@ with gr.Blocks(css=".gradio-container {max-width: 544px !important}", analytics_
             elem_id="output_video",
         )
 
-    button.click(fn=generate, inputs=[textbox], outputs=[output_video], show_progress=False)
+    button.click(fn=generate, inputs=[textbox], outputs=[output_video])
 
 import os
 PORT = int(os.getenv('server_port'))
