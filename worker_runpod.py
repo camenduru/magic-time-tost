@@ -76,26 +76,6 @@ def closestNumber(n, m):
         return n1
     return n2
 
-def generate(command):
-    values = json.loads(command)
-    random_seed = torch.randint(0, 2 ** 32 - 1, (1,)).item()
-    torch.manual_seed(torch.randint(0, 2 ** 32 - 1, (1,)).item())
-    prompt = values['prompt']
-    num_inference_steps = 25
-    guidance_scale = 8.5
-    width = 512
-    height = 512
-    video_length = 16
-    sample = pipeline(prompt,
-                    num_inference_steps=num_inference_steps,
-                    guidance_scale=guidance_scale,
-                    width=width,
-                    height=height,
-                    video_length=video_length,
-                    ).videos
-    save_videos_grid(sample, f"/content/MagicTime/output.mp4")
-    return f"/content/MagicTime/output.mp4"
-
 @torch.inference_mode()
 def generate(input):
     values = input["input"]
