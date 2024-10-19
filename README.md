@@ -19,4 +19,4 @@ https://pku-yuangroup.github.io/MagicTime/
 ![merge_all1-ezgif com-loop-count](https://github.com/camenduru/MagicTime-replicate/assets/54370274/4e7d6a2c-21e7-470a-a465-9260b387d204)
 
 ### 🏢 Sponsor
-https://runpod.io
+[https://runpod.io](https://runpod.io?ref=iqi9iy8y)
